@@ -1,0 +1,81 @@
+/* ==================================== */
+/* 共通設定と背景の固定 */
+/* ==================================== */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    /* 背景画像の固定設定 */
+    background-image: url('images/main_bg.jpg'); 
+    **background-attachment: fixed;**
+    background-size: cover;
+    background-color: #f0f0f0;
+}
+
+/* ページ内リンクのスムーズスクロール */
+**html {
+    scroll-behavior: smooth;
+}**
+
+/* セクションの基本スタイル */
+section {
+    padding: 50px 20px;
+    min-height: 50vh;
+}
+
+/* ==================================== */
+/* 1. 固定ヘッダーの設定 */
+/* ==================================== */
+.header-menu {
+    **position: fixed;**
+    **top: 0;**
+    **left: 0;**
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    **z-index: 100;** /* 最前面に表示 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: right;
+}
+
+.header-menu nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* 2. 固定ヘッダーの高さ分、コンテンツに余白を空ける */
+.main-content {
+    **padding-top: 60px;**
+}
+
+
+/* ==================================== */
+/* 3. 背景動画の設定 */
+/* ==================================== */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero-section video {
+    **position: absolute;**
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    **z-index: 1;** /* 動画はコンテンツより下 */
+}
+
+/* 動画の上にくるコンテンツ */
+.hero-section .content {
+    **position: relative;**
+    **z-index: 2;** /* 動画より上 */
+    color: white;
+    padding-top: 30vh;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
