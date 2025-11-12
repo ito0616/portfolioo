@@ -1,81 +1,151 @@
 /* ==================================== */
-/* 共通設定と背景の固定 */
+/* 共通設定と背景の固定（コンテンツが滑る設定） */
 /* ==================================== */
 body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    /* 背景画像の固定設定 */
+    /* 背景画像（動画を使用しないセクションの背景として使用） */
     background-image: url('images/main_bg.jpg'); 
-    **background-attachment: fixed;**
+    background-attachment: fixed; /* 背景画像を画面に固定 */
     background-size: cover;
     background-color: #f0f0f0;
 }
 
 /* ページ内リンクのスムーズスクロール */
-**html {
+html {
     scroll-behavior: smooth;
-}**
-
-/* セクションの基本スタイル */
-section {
-    padding: 50px 20px;
-    min-height: 50vh;
 }
 
-/* ==================================== */
-/* 1. 固定ヘッダーの設定 */
-/* ==================================== */
-.header-menu {
-    **position: fixed;**
-    **top: 0;**
-    **left: 0;**
-    width: 100%;
-    background-color: #333;
-    color: white;
-    padding: 15px 20px;
-    **z-index: 100;** /* 最前面に表示 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    text-align: right;
-}
-
-.header-menu nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-/* 2. 固定ヘッダーの高さ分、コンテンツに余白を空ける */
-.main-content {
-    **padding-top: 60px;**
+/* スクロールさせるコンテンツのレイヤー設定 */
+.scrollable-content {
+    position: relative; 
+    z-index: 2; /* 動画より手前に表示 */
+    /* 動画の上にコンテンツを載せるため、背景色で動画の透過度を調整する */
+    background-color: rgba(255, 255, 255, 0.8); 
 }
 
 
 /* ==================================== */
-/* 3. 背景動画の設定 */
+/* 1. 動画背景の固定設定 */
 /* ==================================== */
-.hero-section {
-    position: relative;
+.fixed-video-background {
+    **position: fixed;** /* 画面全体に固定 */
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
-    text-align: center;
+    z-index: 1; /* コンテンツより後ろ */
 }
 
-.hero-section video {
-    **position: absolute;**
+.fixed-video-background video {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
-    **z-index: 1;** /* 動画はコンテンツより下 */
 }
 
-/* 動画の上にくるコンテンツ */
-.hero-section .content {
-    **position: relative;**
-    **z-index: 2;** /* 動画より上 */
+
+/* ==================================== */
+/* 2. 固定ヘッダーの設定（Flexboxで左右配置） */
+/* ==================================== */
+.header-menu {
+    **position: fixed;**
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
     color: white;
-    padding-top: 30vh;
+    padding: 15px 20px;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+    /* Flexboxでタイトルとボタンを左右に配置 */
+    display: flex; 
+    justify-content: space-between; /* 両端に引き離す */
+    align-items: center; /* 垂直中央揃え */
+}
+
+.header-menu h1 {
+    margin: 0; 
+    font-size: 1.5em;
+}
+
+/* 3. 詳細ボタンのスタイル */
+.detail-button {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* 固定ヘッダーが is-closed になったらボタンを閉じるなど、他のスタイルも追加できる */
+}
+
+/* 4. 固定ヘッダーの高さ分、コンテンツに余白を空ける */
+.main-content {
+    **padding-top: 60px;** /* ヘッダーの高さに合わせて調整 */
+}
+
+/* ==================================== */
+/* 5. ドロップダウンメニューの開閉（JavaScript版と連携） */
+/* ==================================== */
+.dropdown-menu {
+    position: absolute;
+    top: 60px; /* ヘッダーの高さの下から開始 */
+    right: 0;
+    background-color: #444;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
+    max-height: 500px; 
+    opacity: 1;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* 閉じた状態 (JavaScriptがこのクラスを付け外しする) */
+.dropdown-menu.is-closed {
+    max-height: 0; 
+    opacity: 0;
+    overflow: hidden;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #555;
+}
+
+
+/* ==================================== */
+/* 6. 見出しの下線（Border-bottomを使用） */
+/* ==================================== */
+h2 {
+    /* 見出し幅全体に線を入れる */
+    **border-bottom: 3px solid #007bff;** padding-bottom: 5px; 
+    margin-bottom: 25px;
+}
+
+/* その他のセクションの基本スタイル */
+section {
+    padding: 50px 20px;
+    /* min-height: 50vh; */ /* 必要に応じて調整 */
+}
+
+/* ヒーローセクションのコンテンツ（動画の上に載る） */
+.hero-content {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+}
+
+.hero-content .content {
+    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    padding-top: 30vh;
 }
