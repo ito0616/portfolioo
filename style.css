@@ -6,7 +6,7 @@ body {
     background-image: url('images/main_bg.jpg'); 
     **background-attachment: fixed;** /* 背景画像を画面に固定 */
     background-size: cover;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
 }
 
 
