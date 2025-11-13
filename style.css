@@ -1,6 +1,4 @@
-/* ==================================== */
-/* 共通設定と背景の固定 */
-/* ==================================== */
+
 body {
     font-family: sans-serif;
     margin: 0;
@@ -11,21 +9,19 @@ body {
     background-color: #f0f0f0;
 }
 
-/* ページ内リンクのスムーズスクロール */
+
 **html {
     scroll-behavior: smooth;
 }**
 
-/* スクロールさせるコンテンツのレイヤー設定 */
+
 .scrollable-content {
     position: relative; 
     z-index: 2; /* 動画より手前に表示 */
     background-color: rgba(255, 255, 255, 0.8); /* 半透明の背景で動画の視認性を調整 */
 }
 
-/* ==================================== */
-/* 1. 動画背景の固定設定 */
-/* ==================================== */
+
 .fixed-video-background {
     **position: fixed;** /* 画面全体に固定 */
     top: 0;
@@ -45,7 +41,7 @@ body {
     min-height: 100%;
 }
 
-/* ヒーローセクションのコンテンツ（動画の上に載る） */
+
 .hero-content {
     position: relative;
     height: 100vh;
@@ -58,9 +54,7 @@ body {
     padding-top: 30vh;
 }
 
-/* ==================================== */
-/* 2. 固定ヘッダーの設定（Flexboxで左右配置） */
-/* ==================================== */
+
 .header-menu {
     **position: fixed;**
     top: 0;
@@ -82,13 +76,11 @@ body {
     font-size: 1.5em;
 }
 
-/* 3. 固定ヘッダーの高さ分、コンテンツに余白を空ける */
+/
 .main-content {
     **padding-top: 60px;** }
 
-/* ==================================== */
-/* 4. メニューボタンのスタイル（ハンバーガーアイコン） */
-/* ==================================== */
+
 .detail-button {
     background-color: transparent; /* 背景色を透明に */
     padding: 0;
@@ -114,9 +106,7 @@ body {
 }
 
 
-/* ==================================== */
-/* 5. ドロップダウンメニューの開閉（JavaScript連携） */
-/* ==================================== */
+
 .dropdown-menu {
     position: absolute;
     top: 60px; 
@@ -130,7 +120,6 @@ body {
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
 }
 
-/* 閉じた状態 (JavaScriptがこのクラスを付け外しする) */
 .dropdown-menu.is-closed {
     max-height: 0; 
     opacity: 0;
@@ -146,9 +135,7 @@ body {
 }
 
 
-/* ==================================== */
-/* 6. 見出しの下線 (アクアマリン #7fffd4) */
-/* ==================================== */
+
 h2 {
     /* アクアマリン色で太さ3pxの線 */
     **border-bottom: 3px solid #7fffd4;** padding-bottom: 5px; 
