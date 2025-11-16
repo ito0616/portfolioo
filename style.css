@@ -114,3 +114,10 @@ section {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     padding-top: 30vh;
 }
+
+h2 {
+    **display: inline-block;** /* 幅をテキストの長さに合わせる */
+    **border-bottom: 3px dashed #ff5722;** /* 破線も使えるで */
+    padding-bottom: 5px;
+    margin-bottom: 10px; /* 下の要素との隙間を作る */
+}
