@@ -8,16 +8,16 @@ body {
     background-size: cover;
     background-color: #fffafa;
     h2 {
-    **display: inline-block;** /* 幅をテキストの長さに合わせる */
-    **border-bottom: 3px solid #98fb98;** /* 破線も使えるで */
+    display: inline-block;
+    border-bottom: 3px solid #98fb98;
     padding-bottom: 5px;
-    margin-bottom: 10px; /* 下の要素との隙間を作る */
+    margin-bottom: 10px; 
 }
    h3 {
-    **display: inline-block;** /* 幅をテキストの長さに合わせる */
-    **border-bottom: 3px solid #f0fff0;** /* 破線も使えるで */
+    display: inline-block; 
+    border-bottom: 3px solid #f0fff0;
     padding-bottom: 5px;
-    margin-bottom: 10px; /* 下の要素との隙間を作る */
+    margin-bottom: 10px; 
 } 
 }
 
