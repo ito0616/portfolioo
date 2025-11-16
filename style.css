@@ -1,60 +1,22 @@
-
+/* ==================================== */
+/* 共通設定と背景の固定（コンテンツが滑る設定） */
+/* ==================================== */
 body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('images/main_bg.jpg'); 
-    **background-attachment: fixed;** /* 背景画像を画面に固定 */
     background-size: cover;
     background-color: #ffffff;
 }
 
-
-**html {
+/* ページ内リンクのスムーズスクロール */
+html {
     scroll-behavior: smooth;
-}**
-
-
-.scrollable-content {
-    position: relative; 
-    z-index: 2; /* 動画より手前に表示 */
-    background-color: rgba(255, 255, 255, 0.8); /* 半透明の背景で動画の視認性を調整 */
 }
 
-
-.fixed-video-background {
-    **position: fixed;** /* 画面全体に固定 */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 1; /* コンテンツより後ろ */
-}
-
-.fixed-video-background video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-}
-
-
-.hero-content {
-    position: relative;
-    height: 100vh;
-    text-align: center;
-}
-
-.hero-content .content {
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    padding-top: 30vh;
-}
-
-
+/* ==================================== */
+/* 2. 固定ヘッダーの設定（Flexboxで左右配置） */
+/* ==================================== */
 .header-menu {
     **position: fixed;**
     top: 0;
@@ -66,6 +28,7 @@ body {
     z-index: 100;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     
+    /* Flexboxでタイトルとボタンを左右に配置 */
     display: flex; 
     justify-content: space-between; /* 両端に引き離す */
     align-items: center; /* 垂直中央揃え */
@@ -76,42 +39,30 @@ body {
     font-size: 1.5em;
 }
 
-/
-.main-content {
-    **padding-top: 60px;** }
-
-
+/* 3. 詳細ボタンのスタイル */
 .detail-button {
-    background-color: transparent; /* 背景色を透明に */
-    padding: 0;
-    width: 30px; 
-    height: 24px; /* 三本の線が入る高さに調整 */
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; /* spanの間に均等なスペースを空ける */
-    align-items: center;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    border: none;
-    /* アクアマリンをボタンの背景色に使う場合、以下を有効にする */
-    /* background-color: #7fffd4; */ 
-    /* color: #333; */
+    /* 固定ヘッダーが is-closed になったらボタンを閉じるなど、他のスタイルも追加できる */
 }
 
-.menu-icon span {
-    display: #7fffd4;
-    width: 100%;
-    height: 3px; /* 線の太さ */
-    background-color: white; /* 線の色 */
-    transition: transform 0.3s, opacity 0.3s;
+/* 4. 固定ヘッダーの高さ分、コンテンツに余白を空ける */
+.main-content {
+    **padding-top: 60px;** /* ヘッダーの高さに合わせて調整 */
 }
 
-
-
+/* ==================================== */
+/* 5. ドロップダウンメニューの開閉（JavaScript版と連携） */
+/* ==================================== */
 .dropdown-menu {
     position: absolute;
-    top: 60px; 
+    top: 60px; /* ヘッダーの高さの下から開始 */
     right: 0;
-    background-color: #444; /* メニューの背景色 */
+    background-color: #444;
     width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     
@@ -120,6 +71,7 @@ body {
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
 }
 
+/* 閉じた状態 (JavaScriptがこのクラスを付け外しする) */
 .dropdown-menu.is-closed {
     max-height: 0; 
     opacity: 0;
@@ -135,15 +87,30 @@ body {
 }
 
 
-
+/* ==================================== */
+/* 6. 見出しの下線（Border-bottomを使用） */
+/* ==================================== */
 h2 {
-    /* アクアマリン色で太さ3pxの線 */
-    **border-bottom: 3px solid #7fffd4;** padding-bottom: 5px; 
+    /* 見出し幅全体に線を入れる */
+    **border-bottom: 3px solid #007bff;** padding-bottom: 5px; 
     margin-bottom: 25px;
 }
 
 /* その他のセクションの基本スタイル */
 section {
     padding: 50px 20px;
+    /* min-height: 50vh; */ /* 必要に応じて調整 */
 }
 
+/* ヒーローセクションのコンテンツ（動画の上に載る） */
+.hero-content {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+}
+
+.hero-content .content {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    padding-top: 30vh;
+}
