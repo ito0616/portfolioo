@@ -56,8 +56,8 @@ html {
     background-color: #007bff;
     color: white;
     text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 20px 20px;
+    border-radius: 20px;
     cursor: pointer;
     /* 固定ヘッダーが is-closed になったらボタンを閉じるなど、他のスタイルも追加できる */
 }
