@@ -9,13 +9,13 @@ body {
     background-color: #fffafa;
     h2 {
     **display: inline-block;** /* 幅をテキストの長さに合わせる */
-    **border-bottom: 3px dashed #98fb98;** /* 破線も使えるで */
+    **border-bottom: 3px solid #98fb98;** /* 破線も使えるで */
     padding-bottom: 5px;
     margin-bottom: 10px; /* 下の要素との隙間を作る */
 }
    h3 {
     **display: inline-block;** /* 幅をテキストの長さに合わせる */
-    **border-bottom: 3px dashed #f0fff0;** /* 破線も使えるで */
+    **border-bottom: 3px solid #f0fff0;** /* 破線も使えるで */
     padding-bottom: 5px;
     margin-bottom: 10px; /* 下の要素との隙間を作る */
 } 
