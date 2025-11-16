@@ -7,6 +7,12 @@ body {
     padding: 0;
     background-size: cover;
     background-color: #ffffff;
+    h2 {
+    **display: inline-block;** /* 幅をテキストの長さに合わせる */
+    **border-bottom: 3px dashed #98fb98;** /* 破線も使えるで */
+    padding-bottom: 5px;
+    margin-bottom: 10px; /* 下の要素との隙間を作る */
+}
 }
 
 /* ページ内リンクのスムーズスクロール */
