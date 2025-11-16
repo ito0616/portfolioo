@@ -92,7 +92,7 @@ html {
 /* ==================================== */
 h2 {
     /* 見出し幅全体に線を入れる */
-    **border-bottom: 3px solid #007bff;** padding-bottom: 5px; 
+    **border-bottom: 3px solid #98fb98;** padding-bottom: 5px; 
     margin-bottom: 25px;
 }
 
@@ -117,7 +117,7 @@ section {
 
 h2 {
     **display: inline-block;** /* 幅をテキストの長さに合わせる */
-    **border-bottom: 3px dashed #ff5722;** /* 破線も使えるで */
+    **border-bottom: 3px dashed #98fb98;** /* 破線も使えるで */
     padding-bottom: 5px;
     margin-bottom: 10px; /* 下の要素との隙間を作る */
 }
