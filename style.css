@@ -9,13 +9,13 @@ body {
     background-color: #fffff0;
     h2 {
     display: inline-block;
-    border-bottom: 3px solid #98fb98;
+    border-bottom: 3px solid #66cdaa;
     padding-bottom: 5px;
     margin-bottom: 10px; 
 }
    h3 {
     display: inline-block; 
-    border-bottom: 3px solid #f0fff0;
+    border-bottom: 3px solid #ffa500;
     padding-bottom: 5px;
     margin-bottom: 10px; 
 } 
