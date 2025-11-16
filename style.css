@@ -133,3 +133,15 @@ h2 {
     padding-bottom: 5px;
     margin-bottom: 10px; /* 下の要素との隙間を作る */
 }
+   h2 {
+    display: inline-block;
+    border-bottom: 3px solid #98fb98;
+    padding-bottom: 5px;
+    margin-bottom: 10px; 
+}
+   h3 {
+    display: inline-block; 
+    border-bottom: 3px solid #f0fff0;
+    padding-bottom: 5px;
+    margin-bottom: 10px; 
+} 
