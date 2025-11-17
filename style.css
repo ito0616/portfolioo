@@ -1,6 +1,3 @@
-/* ==================================== */
-/* 共通設定と背景の固定（コンテンツが滑る設定） */
-/* ==================================== */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -21,14 +18,10 @@ body {
 } 
 }
 
-/* ページ内リンクのスムーズスクロール */
 html {
     scroll-behavior: smooth;
 }
 
-/* ==================================== */
-/* 2. 固定ヘッダーの設定（Flexboxで左右配置） */
-/* ==================================== */
 .header-menu {
     **position: fixed;**
     top: 0;
@@ -40,18 +33,16 @@ html {
     z-index: 100;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     
-    /* Flexboxでタイトルとボタンを左右に配置 */
+
     display: flex; 
-    justify-content: space-between; /* 両端に引き離す */
-    align-items: center; /* 垂直中央揃え */
-}
+    justify-content: space-between; 
+    align-items: center;}
 
 .header-menu h1 {
     margin: 0; 
     font-size: 1.5em;
 }
 
-/* 3. 詳細ボタンのスタイル */
 .detail-button {
     background-color: #007bff;
     color: white;
@@ -59,20 +50,15 @@ html {
     padding: 20px 20px;
     border-radius: 20px;
     cursor: pointer;
-    /* 固定ヘッダーが is-closed になったらボタンを閉じるなど、他のスタイルも追加できる */
 }
 
-/* 4. 固定ヘッダーの高さ分、コンテンツに余白を空ける */
 .main-content {
-    **padding-top: 5px;** /* ヘッダーの高さに合わせて調整 */
+    **padding-top: 5px;
 }
 
-/* ==================================== */
-/* 5. ドロップダウンメニューの開閉（JavaScript版と連携） */
-/* ==================================== */
 .dropdown-menu {
     position: absolute;
-    top: 60px; /* ヘッダーの高さの下から開始 */
+    top: 60px;
     right: 0;
     background-color: #444;
     width: 200px;
@@ -99,40 +85,13 @@ html {
 }
 
 
-/* ==================================== */
-/* 6. 見出しの下線（Border-bottomを使用） */
-/* ==================================== */
-h2 {
-    /* 見出し幅全体に線を入れる */
-    **border-bottom: 3px solid #98fb98;** padding-bottom: 5px; 
-    margin-bottom: 25px;
-}
-
 /* その他のセクションの基本スタイル */
 section {
     padding: 50px 20px;
     /* min-height: 50vh; */ /* 必要に応じて調整 */
 }
 
-/* ヒーローセクションのコンテンツ（動画の上に載る） */
-.hero-content {
-    position: relative;
-    height: 100vh;
-    text-align: center;
-}
 
-.hero-content .content {
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    padding-top: 30vh;
-}
-
-h2 {
-    **display: inline-block;** /* 幅をテキストの長さに合わせる */
-    **border-bottom: 3px dashed #98fb98;** /* 破線も使えるで */
-    padding-bottom: 5px;
-    margin-bottom: 10px; /* 下の要素との隙間を作る */
-}
    h2 {
     display: inline-block;
     border-bottom: 3px solid #66cdaa;
