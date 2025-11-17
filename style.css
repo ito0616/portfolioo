@@ -40,14 +40,14 @@ html {
 
 .header-menu h1 {
     margin: 0; 
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 .detail-button {
     background-color: #007bff;
     color: white;
     text-decoration: none;
-    padding: 20px 20px;
+    padding: 30px 30px;
     border-radius: 20px;
     cursor: pointer;
 }
